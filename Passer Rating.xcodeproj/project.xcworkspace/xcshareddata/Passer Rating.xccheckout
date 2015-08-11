@@ -10,31 +10,31 @@
 	<string>Passer Rating</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8702CF11-8A81-4391-B513-D192F00EB5E6</key>
-		<string>ssh://manoverboard.org/git/Passer%20Rating.git</string>
+		<key>F4669AC9452313F185E206F92686B954DED30595</key>
+		<string>github.com:FattGuy/Passer-Rating.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Passer Rating.xcodeproj/project.xcworkspace</string>
+	<string>Passer Rating.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8702CF11-8A81-4391-B513-D192F00EB5E6</key>
+		<key>F4669AC9452313F185E206F92686B954DED30595</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://manoverboard.org/git/Passer%20Rating.git</string>
+	<string>github.com:FattGuy/Passer-Rating.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8702CF11-8A81-4391-B513-D192F00EB5E6</string>
+	<string>F4669AC9452313F185E206F92686B954DED30595</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8702CF11-8A81-4391-B513-D192F00EB5E6</string>
+			<string>F4669AC9452313F185E206F92686B954DED30595</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Passer Rating</string>
+			<string>Passer%20Rating</string>
 		</dict>
 	</array>
 </dict>
