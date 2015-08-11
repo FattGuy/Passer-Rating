@@ -223,6 +223,7 @@
 				33CC9D0617B02F320083C59F /* Frameworks */,
 				334E4FA217B8367500518DFB /* Generate Test Data */,
 				33CC9D0717B02F320083C59F /* Resources */,
+				B32DF2331B7A732600A40598 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,6 +327,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/ruby \"${SRCROOT}/Passer Rating/generate-games.rb\" \"${SRCROOT}/Passer Rating/sample-data.csv\"";
+		};
+		B32DF2331B7A732600A40598 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Passer Rating/generate-games.rb",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Passer Rating/sample-data.csv",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Passer Rating/generate-games.rb\" > \"${SRCROOT}/Passer Rating/sample-data.csv\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

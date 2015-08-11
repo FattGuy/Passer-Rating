@@ -24,9 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
@@ -39,24 +39,24 @@
 
 - (void)insertNewObject:(id)sender
 {
-	//  Leave this in. I'll explain why.
-//	NSEntityDescription *entity =
-//            [[self.fetchedResultsController fetchRequest] entity];
+    //  Leave this in. I'll explain why.
+    //	NSEntityDescription *entity =
+    //            [[self.fetchedResultsController fetchRequest] entity];
     
-	//  Initialize a new Passer.
-	PRPasser *        newPasser =
+    //  Initialize a new Passer.
+    PRPasser *        newPasser =
     [PRPasser passerWithFirstName: @"FirstName"
-                       lastName: @"LastName"
-                      inContext:  self.managedObjectContext];
-	newPasser.currentTeam = @"TeamName";
-	
-	// Save the context.
-	NSError *error;
-	if (![self.managedObjectContext save:&error]) {
-		//  ...
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
+                         lastName: @"LastName"
+                        inContext:  self.managedObjectContext];
+    newPasser.currentTeam = @"TeamName";
+    
+    // Save the context.
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        //  ...
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 #pragma mark - Table View
@@ -93,12 +93,12 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    }   
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +112,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        [[segue destinationViewController] setDetailItem: (PRPasser *) object];
     }
 }
 
@@ -125,19 +125,18 @@
     }
     
     NSFetchRequest *fetchRequest =
-            [NSFetchRequest fetchRequestWithEntityName: @"Passer"];
+    [NSFetchRequest fetchRequestWithEntityName: @"Passer"];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    
     NSArray *       sortDescriptors;
     sortDescriptors = @[
-        [NSSortDescriptor sortDescriptorWithKey: @"lastName"
-                                      ascending: YES],
-        [NSSortDescriptor sortDescriptorWithKey: @"firstName"
-                                      ascending: YES]
+                        [NSSortDescriptor sortDescriptorWithKey: @"lastName"
+                                                      ascending: YES],
+                        [NSSortDescriptor sortDescriptorWithKey: @"firstName"
+                                                      ascending: YES]
                         ];
     fetchRequest.sortDescriptors = sortDescriptors;
     
@@ -147,16 +146,16 @@
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-	     // Replace this implementation with code to handle the error appropriately.
-	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
     return _fetchedResultsController;
-}    
+}
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -209,20 +208,20 @@
 }
 
 /*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
+ // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
  
  - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
+ {
+ // In the simplest, most efficient, case, reload the table view.
+ [self.tableView reloadData];
+ }
  */
 
 - (void)configureCell: (UITableViewCell *) cell
           atIndexPath: (NSIndexPath *) indexPath
 {
     PRPasser *    passer = (PRPasser *)
-            [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSString *  content = [NSString stringWithFormat: @"%@ %@ (%.1f)",
                            passer.firstName, passer.lastName,
                            passer.passerRating];

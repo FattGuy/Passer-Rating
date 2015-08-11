@@ -21,13 +21,20 @@
     return rating;
 }
 
++ (NSUInteger) count: (NSManagedObjectContext *) moc
+{
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName: @"PRGame"];
+    return [moc countForFetchRequest: request
+                               error: NULL];
+}
+
 #pragma mark - Loading from CSV
 
 + (BOOL) loadFromCSVFile: (NSString *) path
              intoContext: (NSManagedObjectContext *) moc
                    error: (NSError **) error
 {
-	SimpleCSVFile *		csv = [[SimpleCSVFile alloc] initWithPath: path];
+    SimpleCSVFile *		csv = [[SimpleCSVFile alloc] initWithPath: path];
     BOOL                success;
     
     //  csv.moc = moc;
@@ -64,7 +71,7 @@
     } error: error
                ];
     
-	return success;
+    return success;
 }
 
 #pragma mark - Formatters
@@ -75,7 +82,7 @@
     static dispatch_once_t      onceToken;
     dispatch_once(&onceToken, ^{
         sDateFormat = [[NSDateFormatter alloc] init];
-		sDateFormat.dateFormat = @"yyyy-MM-dd";
+        sDateFormat.dateFormat = @"yyyy-MM-dd";
     });
     return sDateFormat;
 }
@@ -86,17 +93,16 @@
     static dispatch_once_t  onceToken;
     dispatch_once(&onceToken, ^{
         sShortFormat = [[NSDateFormatter alloc] init];
-		sShortFormat.dateStyle = NSDateFormatterShortStyle;
+        sShortFormat.dateStyle = NSDateFormatterShortStyle;
     });
     return sShortFormat;
 }
-
 
 #pragma mark - Editor support
 
 + (NSArray *) allAttributes
 {
-	static NSArray *			sAllAttributes = nil;
+    static NSArray *			sAllAttributes = nil;
     static dispatch_once_t      onceToken;
     dispatch_once(&onceToken, ^{
         sAllAttributes = @[ @"whenPlayed", @"theirTeam",  @"theirScore",
@@ -104,12 +110,12 @@
                             @"ourScore", @"yards", @"attempts",
                             @"interceptions" ];
     });
-	return sAllAttributes;
+    return sAllAttributes;
 }
 
 + (NSArray *) numericAttributes
 {
-	static NSArray *			sNumericAttributes = nil;
+    static NSArray *			sNumericAttributes = nil;
     static dispatch_once_t      onceToken;
     dispatch_once(&onceToken, ^{
         sNumericAttributes = @[ @"theirScore", @"touchdowns",
@@ -117,51 +123,51 @@
                                 @"yards", @"attempts",
                                 @"interceptions"];
     });
-	return sNumericAttributes;
+    return sNumericAttributes;
 }
 
 + (NSDictionary *) defaultDictionary
 {
-	static NSDictionary *		sDict = nil;
+    static NSDictionary *		sDict = nil;
     static dispatch_once_t      onceToken;
     dispatch_once(&onceToken, ^{
         NSMutableDictionary *	temp = [NSMutableDictionary	dictionary];
-		for (NSString * key in [self numericAttributes])
-			[temp setObject: @"0" forKey: key];
-		[temp setObject: @"Opponents" forKey: @"theirTeam"];
-		[temp setObject: @"Our Team" forKey: @"ourTeam"];
-		[temp setObject: [[self shortFormatter] stringFromDate: [NSDate date]]
-				 forKey: @"whenPlayed"];
-		sDict = [temp copy];
+        for (NSString * key in [self numericAttributes])
+            [temp setObject: @"0" forKey: key];
+        [temp setObject: @"Opponents" forKey: @"theirTeam"];
+        [temp setObject: @"Our Team" forKey: @"ourTeam"];
+        [temp setObject: [[self shortFormatter] stringFromDate: [NSDate date]]
+                 forKey: @"whenPlayed"];
+        sDict = [temp copy];
     });
-	return sDict;
+    return sDict;
 }
 
 - (NSMutableDictionary *) mutableDictionaryRepresentation
 {
-	NSMutableDictionary *		retval = [NSMutableDictionary dictionary];
-	for (NSString * key in [PRGame numericAttributes]) {
-		int				value = [[self valueForKey: key] intValue];
-		NSString *		str = [NSString stringWithFormat: @"%d", value];
-		[retval setObject: str forKey: key];
-	}
-	[retval setObject: self.theirTeam forKey: @"theirTeam"];
-	[retval setObject: self.ourTeam forKey: @"ourTeam"];
-	[retval setObject: [[PRGame shortFormatter] stringFromDate: self.whenPlayed]
-			   forKey: @"whenPlayed"];
-	
-	return retval;
+    NSMutableDictionary *		retval = [NSMutableDictionary dictionary];
+    for (NSString * key in [PRGame numericAttributes]) {
+        int				value = [[self valueForKey: key] intValue];
+        NSString *		str = [NSString stringWithFormat: @"%d", value];
+        [retval setObject: str forKey: key];
+    }
+    [retval setObject: self.theirTeam forKey: @"theirTeam"];
+    [retval setObject: self.ourTeam forKey: @"ourTeam"];
+    [retval setObject: [[PRGame shortFormatter] stringFromDate: self.whenPlayed]
+               forKey: @"whenPlayed"];
+    
+    return retval;
 }
 
 - (void) setValuesFromDictionary: (NSDictionary *) aDict
 {
-	for (NSString * key in [PRGame numericAttributes]) {
-		[self setValue: [NSNumber numberWithInt: [[aDict objectForKey: key] intValue]]
-				forKey: key];
-	}
-	self.theirTeam = [aDict objectForKey: @"theirTeam"];
-	self.ourTeam = [aDict objectForKey: @"ourTeam"];
-	self.whenPlayed = [[PRGame shortFormatter] dateFromString: [aDict objectForKey: @"whenPlayed"]];
+    for (NSString * key in [PRGame numericAttributes]) {
+        [self setValue: [NSNumber numberWithInt: [[aDict objectForKey: key] intValue]]
+                forKey: key];
+    }
+    self.theirTeam = [aDict objectForKey: @"theirTeam"];
+    self.ourTeam = [aDict objectForKey: @"ourTeam"];
+    self.whenPlayed = [[PRGame shortFormatter] dateFromString: [aDict objectForKey: @"whenPlayed"]];
 }
 
 @end

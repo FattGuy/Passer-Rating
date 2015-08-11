@@ -3,7 +3,6 @@
 
 #import "_PRGame.h"
 
-
 const struct PRGameAttributes PRGameAttributes = {
 	.attempts = @"attempts",
 	.completions = @"completions",
@@ -17,16 +16,9 @@ const struct PRGameAttributes PRGameAttributes = {
 	.yards = @"yards",
 };
 
-
-
 const struct PRGameRelationships PRGameRelationships = {
 	.passer = @"passer",
 };
-
-
-
-
-
 
 @implementation PRGameID
 @end
@@ -53,7 +45,7 @@ const struct PRGameRelationships PRGameRelationships = {
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
-	
+
 	if ([key isEqualToString:@"attemptsValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"attempts"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -93,237 +85,153 @@ const struct PRGameRelationships PRGameRelationships = {
 	return keyPaths;
 }
 
-
-
-
 @dynamic attempts;
 
-
-
-- (int32_t)attemptsValue {
+- (uint32_t)attemptsValue {
 	NSNumber *result = [self attempts];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setAttemptsValue:(int32_t)value_ {
-	[self setAttempts:@(value_)];
+- (void)setAttemptsValue:(uint32_t)value_ {
+	[self setAttempts:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveAttemptsValue {
+- (uint32_t)primitiveAttemptsValue {
 	NSNumber *result = [self primitiveAttempts];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveAttemptsValue:(int32_t)value_ {
-	[self setPrimitiveAttempts:@(value_)];
+- (void)setPrimitiveAttemptsValue:(uint32_t)value_ {
+	[self setPrimitiveAttempts:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic completions;
 
-
-
-- (int32_t)completionsValue {
+- (uint32_t)completionsValue {
 	NSNumber *result = [self completions];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setCompletionsValue:(int32_t)value_ {
-	[self setCompletions:@(value_)];
+- (void)setCompletionsValue:(uint32_t)value_ {
+	[self setCompletions:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveCompletionsValue {
+- (uint32_t)primitiveCompletionsValue {
 	NSNumber *result = [self primitiveCompletions];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveCompletionsValue:(int32_t)value_ {
-	[self setPrimitiveCompletions:@(value_)];
+- (void)setPrimitiveCompletionsValue:(uint32_t)value_ {
+	[self setPrimitiveCompletions:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic interceptions;
 
-
-
-- (int32_t)interceptionsValue {
+- (uint32_t)interceptionsValue {
 	NSNumber *result = [self interceptions];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setInterceptionsValue:(int32_t)value_ {
-	[self setInterceptions:@(value_)];
+- (void)setInterceptionsValue:(uint32_t)value_ {
+	[self setInterceptions:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveInterceptionsValue {
+- (uint32_t)primitiveInterceptionsValue {
 	NSNumber *result = [self primitiveInterceptions];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveInterceptionsValue:(int32_t)value_ {
-	[self setPrimitiveInterceptions:@(value_)];
+- (void)setPrimitiveInterceptionsValue:(uint32_t)value_ {
+	[self setPrimitiveInterceptions:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic ourScore;
 
-
-
-- (int32_t)ourScoreValue {
+- (uint32_t)ourScoreValue {
 	NSNumber *result = [self ourScore];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setOurScoreValue:(int32_t)value_ {
-	[self setOurScore:@(value_)];
+- (void)setOurScoreValue:(uint32_t)value_ {
+	[self setOurScore:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveOurScoreValue {
+- (uint32_t)primitiveOurScoreValue {
 	NSNumber *result = [self primitiveOurScore];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveOurScoreValue:(int32_t)value_ {
-	[self setPrimitiveOurScore:@(value_)];
+- (void)setPrimitiveOurScoreValue:(uint32_t)value_ {
+	[self setPrimitiveOurScore:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic ourTeam;
 
-
-
-
-
-
 @dynamic theirScore;
 
-
-
-- (int32_t)theirScoreValue {
+- (uint32_t)theirScoreValue {
 	NSNumber *result = [self theirScore];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setTheirScoreValue:(int32_t)value_ {
-	[self setTheirScore:@(value_)];
+- (void)setTheirScoreValue:(uint32_t)value_ {
+	[self setTheirScore:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveTheirScoreValue {
+- (uint32_t)primitiveTheirScoreValue {
 	NSNumber *result = [self primitiveTheirScore];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveTheirScoreValue:(int32_t)value_ {
-	[self setPrimitiveTheirScore:@(value_)];
+- (void)setPrimitiveTheirScoreValue:(uint32_t)value_ {
+	[self setPrimitiveTheirScore:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic theirTeam;
 
-
-
-
-
-
 @dynamic touchdowns;
 
-
-
-- (int32_t)touchdownsValue {
+- (uint32_t)touchdownsValue {
 	NSNumber *result = [self touchdowns];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setTouchdownsValue:(int32_t)value_ {
-	[self setTouchdowns:@(value_)];
+- (void)setTouchdownsValue:(uint32_t)value_ {
+	[self setTouchdowns:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveTouchdownsValue {
+- (uint32_t)primitiveTouchdownsValue {
 	NSNumber *result = [self primitiveTouchdowns];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveTouchdownsValue:(int32_t)value_ {
-	[self setPrimitiveTouchdowns:@(value_)];
+- (void)setPrimitiveTouchdownsValue:(uint32_t)value_ {
+	[self setPrimitiveTouchdowns:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic whenPlayed;
 
-
-
-
-
-
 @dynamic yards;
 
-
-
-- (int32_t)yardsValue {
+- (uint32_t)yardsValue {
 	NSNumber *result = [self yards];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-
-- (void)setYardsValue:(int32_t)value_ {
-	[self setYards:@(value_)];
+- (void)setYardsValue:(uint32_t)value_ {
+	[self setYards:[NSNumber numberWithUnsignedInt:value_]];
 }
 
-
-- (int32_t)primitiveYardsValue {
+- (uint32_t)primitiveYardsValue {
 	NSNumber *result = [self primitiveYards];
-	return [result intValue];
+	return [result unsignedIntValue];
 }
 
-- (void)setPrimitiveYardsValue:(int32_t)value_ {
-	[self setPrimitiveYards:@(value_)];
+- (void)setPrimitiveYardsValue:(uint32_t)value_ {
+	[self setPrimitiveYards:[NSNumber numberWithUnsignedInt:value_]];
 }
-
-
-
-
 
 @dynamic passer;
 
-	
-
-
-
-
-
-
 @end
-
-
-
 
