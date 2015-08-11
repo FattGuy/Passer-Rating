@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F909E4A183ECED9002E72FB /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1F909E49183ECED9002E72FB /* sample-data.csv */; };
+		33964EFC17B81E73006BD77E /* _PRGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF417B81E73006BD77E /* _PRGame.m */; };
+		33964EFD17B81E73006BD77E /* _PRPasser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF617B81E73006BD77E /* _PRPasser.m */; };
+		33964EFE17B81E73006BD77E /* PRGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF817B81E73006BD77E /* PRGame.m */; };
+		33964EFF17B81E73006BD77E /* PRPasser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EFA17B81E73006BD77E /* PRPasser.m */; };
+		33CC9D0D17B02F320083C59F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D0C17B02F320083C59F /* Foundation.framework */; };
+		33CC9D0F17B02F320083C59F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D0E17B02F320083C59F /* CoreGraphics.framework */; };
+		33CC9D1117B02F320083C59F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D1017B02F320083C59F /* UIKit.framework */; };
+		33CC9D1317B02F320083C59F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D1217B02F320083C59F /* CoreData.framework */; };
+		33CC9D1917B02F320083C59F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33CC9D1717B02F320083C59F /* InfoPlist.strings */; };
+		33CC9D1B17B02F320083C59F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D1A17B02F320083C59F /* main.m */; };
+		33CC9D1F17B02F320083C59F /* PRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D1E17B02F320083C59F /* PRAppDelegate.m */; };
+		33CC9D2217B02F320083C59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CC9D2017B02F320083C59F /* Main.storyboard */; };
+		33CC9D2517B02F320083C59F /* Passer_Rating.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D2317B02F320083C59F /* Passer_Rating.xcdatamodeld */; };
+		33CC9D2817B02F320083C59F /* PRPasserListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D2717B02F320083C59F /* PRPasserListController.m */; };
+		33CC9D2B17B02F320083C59F /* PRGameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D2A17B02F320083C59F /* PRGameListController.m */; };
+		33CC9D2D17B02F320083C59F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CC9D2C17B02F320083C59F /* Images.xcassets */; };
+		33CC9D3417B02F330083C59F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D3317B02F330083C59F /* XCTest.framework */; };
+		33CC9D3517B02F330083C59F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D0C17B02F320083C59F /* Foundation.framework */; };
+		33CC9D3617B02F330083C59F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D1017B02F320083C59F /* UIKit.framework */; };
+		33CC9D3717B02F330083C59F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CC9D1217B02F320083C59F /* CoreData.framework */; };
+		33CC9D3F17B02F330083C59F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33CC9D3D17B02F330083C59F /* InfoPlist.strings */; };
+		33CC9D4117B02F330083C59F /* Passer_RatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4017B02F330083C59F /* Passer_RatingTests.m */; };
+		33CC9D4C17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
+		33CC9D4D17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
+		33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33CC9D3817B02F330083C59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CC9D0117B02F320083C59F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33CC9D0817B02F320083C59F;
+			remoteInfo = "Passer Rating";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F909E49183ECED9002E72FB /* sample-data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sample-data.csv"; sourceTree = "<group>"; };
+		33964EF317B81E73006BD77E /* _PRGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PRGame.h; sourceTree = "<group>"; };
+		33964EF417B81E73006BD77E /* _PRGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PRGame.m; sourceTree = "<group>"; };
+		33964EF517B81E73006BD77E /* _PRPasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PRPasser.h; sourceTree = "<group>"; };
+		33964EF617B81E73006BD77E /* _PRPasser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PRPasser.m; sourceTree = "<group>"; };
+		33964EF717B81E73006BD77E /* PRGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRGame.h; sourceTree = "<group>"; };
+		33964EF817B81E73006BD77E /* PRGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRGame.m; sourceTree = "<group>"; };
+		33964EF917B81E73006BD77E /* PRPasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPasser.h; sourceTree = "<group>"; };
+		33964EFA17B81E73006BD77E /* PRPasser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPasser.m; sourceTree = "<group>"; };
+		33964EFB17B81E73006BD77E /* PRDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDataModel.h; sourceTree = "<group>"; };
+		33964F4B17B834C3006BD77E /* generate-games.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "generate-games.rb"; sourceTree = "<group>"; };
+		33CC9D0917B02F320083C59F /* Passer Rating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passer Rating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33CC9D0C17B02F320083C59F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		33CC9D0E17B02F320083C59F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33CC9D1017B02F320083C59F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		33CC9D1217B02F320083C59F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		33CC9D1617B02F320083C59F /* Passer Rating-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Passer Rating-Info.plist"; sourceTree = "<group>"; };
+		33CC9D1817B02F320083C59F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33CC9D1A17B02F320083C59F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33CC9D1C17B02F320083C59F /* Passer Rating-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passer Rating-Prefix.pch"; sourceTree = "<group>"; };
+		33CC9D1D17B02F320083C59F /* PRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRAppDelegate.h; sourceTree = "<group>"; };
+		33CC9D1E17B02F320083C59F /* PRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRAppDelegate.m; sourceTree = "<group>"; };
+		33CC9D2117B02F320083C59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33CC9D2417B02F320083C59F /* Passer_Rating.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Passer_Rating.xcdatamodel; sourceTree = "<group>"; };
+		33CC9D2617B02F320083C59F /* PRPasserListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRPasserListController.h; sourceTree = "<group>"; };
+		33CC9D2717B02F320083C59F /* PRPasserListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRPasserListController.m; sourceTree = "<group>"; };
+		33CC9D2917B02F320083C59F /* PRGameListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PRGameListController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		33CC9D2A17B02F320083C59F /* PRGameListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PRGameListController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		33CC9D2C17B02F320083C59F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		33CC9D3217B02F330083C59F /* Passer RatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Passer RatingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33CC9D3317B02F330083C59F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		33CC9D3C17B02F330083C59F /* Passer RatingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Passer RatingTests-Info.plist"; sourceTree = "<group>"; };
+		33CC9D3E17B02F330083C59F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33CC9D4017B02F330083C59F /* Passer_RatingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Passer_RatingTests.m; sourceTree = "<group>"; };
+		33CC9D4A17B0502E0083C59F /* rating.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rating.c; sourceTree = "<group>"; };
+		33CC9D4B17B0502E0083C59F /* rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
+		33E9FEA217B99D590032B3AD /* SimpleCSVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCSVFile.h; sourceTree = "<group>"; };
+		33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCSVFile.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33CC9D0617B02F320083C59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D0F17B02F320083C59F /* CoreGraphics.framework in Frameworks */,
+				33CC9D1317B02F320083C59F /* CoreData.framework in Frameworks */,
+				33CC9D1117B02F320083C59F /* UIKit.framework in Frameworks */,
+				33CC9D0D17B02F320083C59F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33CC9D2F17B02F330083C59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D3417B02F330083C59F /* XCTest.framework in Frameworks */,
+				33CC9D3717B02F330083C59F /* CoreData.framework in Frameworks */,
+				33CC9D3617B02F330083C59F /* UIKit.framework in Frameworks */,
+				33CC9D3517B02F330083C59F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33964EF217B81E73006BD77E /* mogenerated */ = {
+			isa = PBXGroup;
+			children = (
+				33964EF317B81E73006BD77E /* _PRGame.h */,
+				33964EF417B81E73006BD77E /* _PRGame.m */,
+				33964EF517B81E73006BD77E /* _PRPasser.h */,
+				33964EF617B81E73006BD77E /* _PRPasser.m */,
+				33964EF717B81E73006BD77E /* PRGame.h */,
+				33964EF817B81E73006BD77E /* PRGame.m */,
+				33964EF917B81E73006BD77E /* PRPasser.h */,
+				33964EFA17B81E73006BD77E /* PRPasser.m */,
+			);
+			path = mogenerated;
+			sourceTree = "<group>";
+		};
+		33CC9D0017B02F320083C59F = {
+			isa = PBXGroup;
+			children = (
+				33CC9D1417B02F320083C59F /* Passer Rating */,
+				33CC9D3A17B02F330083C59F /* Passer RatingTests */,
+				33CC9D0B17B02F320083C59F /* Frameworks */,
+				33CC9D0A17B02F320083C59F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33CC9D0A17B02F320083C59F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33CC9D0917B02F320083C59F /* Passer Rating.app */,
+				33CC9D3217B02F330083C59F /* Passer RatingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33CC9D0B17B02F320083C59F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33CC9D0C17B02F320083C59F /* Foundation.framework */,
+				33CC9D0E17B02F320083C59F /* CoreGraphics.framework */,
+				33CC9D1017B02F320083C59F /* UIKit.framework */,
+				33CC9D1217B02F320083C59F /* CoreData.framework */,
+				33CC9D3317B02F330083C59F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33CC9D1417B02F320083C59F /* Passer Rating */ = {
+			isa = PBXGroup;
+			children = (
+				33CC9D1D17B02F320083C59F /* PRAppDelegate.h */,
+				33CC9D1E17B02F320083C59F /* PRAppDelegate.m */,
+				33CC9D2017B02F320083C59F /* Main.storyboard */,
+				33CC9D2617B02F320083C59F /* PRPasserListController.h */,
+				33CC9D2717B02F320083C59F /* PRPasserListController.m */,
+				33CC9D2917B02F320083C59F /* PRGameListController.h */,
+				33CC9D2A17B02F320083C59F /* PRGameListController.m */,
+				33CC9D4A17B0502E0083C59F /* rating.c */,
+				33CC9D4B17B0502E0083C59F /* rating.h */,
+				33CC9D2C17B02F320083C59F /* Images.xcassets */,
+				33CC9D2317B02F320083C59F /* Passer_Rating.xcdatamodeld */,
+				33964EF217B81E73006BD77E /* mogenerated */,
+				33964EFB17B81E73006BD77E /* PRDataModel.h */,
+				33E9FEA217B99D590032B3AD /* SimpleCSVFile.h */,
+				33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */,
+				33CC9D1517B02F320083C59F /* Supporting Files */,
+			);
+			path = "Passer Rating";
+			sourceTree = "<group>";
+		};
+		33CC9D1517B02F320083C59F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F909E49183ECED9002E72FB /* sample-data.csv */,
+				33964F4B17B834C3006BD77E /* generate-games.rb */,
+				33CC9D1617B02F320083C59F /* Passer Rating-Info.plist */,
+				33CC9D1717B02F320083C59F /* InfoPlist.strings */,
+				33CC9D1A17B02F320083C59F /* main.m */,
+				33CC9D1C17B02F320083C59F /* Passer Rating-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33CC9D3A17B02F330083C59F /* Passer RatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				33CC9D4017B02F330083C59F /* Passer_RatingTests.m */,
+				33CC9D3B17B02F330083C59F /* Supporting Files */,
+			);
+			path = "Passer RatingTests";
+			sourceTree = "<group>";
+		};
+		33CC9D3B17B02F330083C59F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33CC9D3C17B02F330083C59F /* Passer RatingTests-Info.plist */,
+				33CC9D3D17B02F330083C59F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33CC9D0817B02F320083C59F /* Passer Rating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33CC9D4417B02F330083C59F /* Build configuration list for PBXNativeTarget "Passer Rating" */;
+			buildPhases = (
+				33CC9D0517B02F320083C59F /* Sources */,
+				33CC9D0617B02F320083C59F /* Frameworks */,
+				334E4FA217B8367500518DFB /* Generate Test Data */,
+				33CC9D0717B02F320083C59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Passer Rating";
+			productName = "Passer Rating";
+			productReference = 33CC9D0917B02F320083C59F /* Passer Rating.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33CC9D3117B02F330083C59F /* Passer RatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33CC9D4717B02F330083C59F /* Build configuration list for PBXNativeTarget "Passer RatingTests" */;
+			buildPhases = (
+				33CC9D2E17B02F330083C59F /* Sources */,
+				33CC9D2F17B02F330083C59F /* Frameworks */,
+				33CC9D3017B02F330083C59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33CC9D3917B02F330083C59F /* PBXTargetDependency */,
+			);
+			name = "Passer RatingTests";
+			productName = "Passer RatingTests";
+			productReference = 33CC9D3217B02F330083C59F /* Passer RatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33CC9D0117B02F320083C59F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Xcode User";
+				TargetAttributes = {
+					33CC9D0817B02F320083C59F = {
+						DevelopmentTeam = J2E8MMY7GM;
+					};
+					33CC9D3117B02F330083C59F = {
+						TestTargetID = 33CC9D0817B02F320083C59F;
+					};
+				};
+			};
+			buildConfigurationList = 33CC9D0417B02F320083C59F /* Build configuration list for PBXProject "Passer Rating" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33CC9D0017B02F320083C59F;
+			productRefGroup = 33CC9D0A17B02F320083C59F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33CC9D0817B02F320083C59F /* Passer Rating */,
+				33CC9D3117B02F330083C59F /* Passer RatingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33CC9D0717B02F320083C59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D2D17B02F320083C59F /* Images.xcassets in Resources */,
+				33CC9D1917B02F320083C59F /* InfoPlist.strings in Resources */,
+				1F909E4A183ECED9002E72FB /* sample-data.csv in Resources */,
+				33CC9D2217B02F320083C59F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33CC9D3017B02F330083C59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D3F17B02F330083C59F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		334E4FA217B8367500518DFB /* Generate Test Data */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Passer Rating/generate-games.rb",
+			);
+			name = "Generate Test Data";
+			outputPaths = (
+				"$(SRCROOT)/Passer Rating/sample-data.csv",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/ruby \"${SRCROOT}/Passer Rating/generate-games.rb\" \"${SRCROOT}/Passer Rating/sample-data.csv\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33CC9D0517B02F320083C59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D4C17B0502E0083C59F /* rating.c in Sources */,
+				33964EFF17B81E73006BD77E /* PRPasser.m in Sources */,
+				33CC9D2B17B02F320083C59F /* PRGameListController.m in Sources */,
+				33964EFC17B81E73006BD77E /* _PRGame.m in Sources */,
+				33CC9D2817B02F320083C59F /* PRPasserListController.m in Sources */,
+				33CC9D2517B02F320083C59F /* Passer_Rating.xcdatamodeld in Sources */,
+				33964EFD17B81E73006BD77E /* _PRPasser.m in Sources */,
+				33CC9D1F17B02F320083C59F /* PRAppDelegate.m in Sources */,
+				33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */,
+				33964EFE17B81E73006BD77E /* PRGame.m in Sources */,
+				33CC9D1B17B02F320083C59F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33CC9D2E17B02F330083C59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CC9D4D17B0502E0083C59F /* rating.c in Sources */,
+				33CC9D4117B02F330083C59F /* Passer_RatingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33CC9D3917B02F330083C59F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33CC9D0817B02F320083C59F /* Passer Rating */;
+			targetProxy = 33CC9D3817B02F330083C59F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		33CC9D1717B02F320083C59F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33CC9D1817B02F320083C59F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		33CC9D2017B02F320083C59F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33CC9D2117B02F320083C59F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		33CC9D3D17B02F330083C59F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33CC9D3E17B02F330083C59F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33CC9D4217B02F330083C59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		33CC9D4317B02F330083C59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33CC9D4517B02F330083C59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passer Rating/Passer Rating-Prefix.pch";
+				INFOPLIST_FILE = "Passer Rating/Passer Rating-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		33CC9D4617B02F330083C59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passer Rating/Passer Rating-Prefix.pch";
+				INFOPLIST_FILE = "Passer Rating/Passer Rating-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		33CC9D4817B02F330083C59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passer Rating.app/Passer Rating";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passer Rating/Passer Rating-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Passer RatingTests/Passer RatingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		33CC9D4917B02F330083C59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Passer Rating.app/Passer Rating";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Passer Rating/Passer Rating-Prefix.pch";
+				INFOPLIST_FILE = "Passer RatingTests/Passer RatingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33CC9D0417B02F320083C59F /* Build configuration list for PBXProject "Passer Rating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33CC9D4217B02F330083C59F /* Debug */,
+				33CC9D4317B02F330083C59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33CC9D4417B02F330083C59F /* Build configuration list for PBXNativeTarget "Passer Rating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33CC9D4517B02F330083C59F /* Debug */,
+				33CC9D4617B02F330083C59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33CC9D4717B02F330083C59F /* Build configuration list for PBXNativeTarget "Passer RatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33CC9D4817B02F330083C59F /* Debug */,
+				33CC9D4917B02F330083C59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33CC9D2317B02F320083C59F /* Passer_Rating.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33CC9D2417B02F320083C59F /* Passer_Rating.xcdatamodel */,
+			);
+			currentVersion = 33CC9D2417B02F320083C59F /* Passer_Rating.xcdatamodel */;
+			path = Passer_Rating.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 33CC9D0117B02F320083C59F /* Project object */;
+}
