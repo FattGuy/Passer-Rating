@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="860.625" y="67.605633802816897"/>
         </scene>
-        <!--Detail-->
+        <!--Game-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="PRGameListController" sceneMemberID="viewController">
+                <viewController title="Game" id="Ah7-4n-0Wa" customClass="PRGameListController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fVN-qO-pz0"/>
                         <viewControllerLayoutGuide type="bottom" id="RWR-kh-gCe"/>
