@@ -32,7 +32,7 @@
 		33CC9D4C17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33CC9D4D17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */; };
-		B32F1A9B1B7AF0DE00FF3F47 /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */; };
+		B3A366581B7AFB010049EFBE /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B3A366571B7AFB010049EFBE /* sample-data.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		33E9FEA217B99D590032B3AD /* SimpleCSVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCSVFile.h; sourceTree = "<group>"; };
 		33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCSVFile.m; sourceTree = "<group>"; };
 		B32C4A9E1B7A7D6D0046973F /* generate-games.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "generate-games.rb"; sourceTree = "<group>"; };
-		B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sample-data.csv"; sourceTree = "<group>"; };
+		B3A366571B7AFB010049EFBE /* sample-data.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = "sample-data.csv"; path = "Passer Rating/sample-data.csv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		33CC9D0017B02F320083C59F = {
 			isa = PBXGroup;
 			children = (
-				B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */,
+				B3A366571B7AFB010049EFBE /* sample-data.csv */,
 				B32C4A9E1B7A7D6D0046973F /* generate-games.rb */,
 				33CC9D1417B02F320083C59F /* Passer Rating */,
 				33CC9D3A17B02F330083C59F /* Passer RatingTests */,
@@ -293,7 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32F1A9B1B7AF0DE00FF3F47 /* sample-data.csv in Resources */,
+				B3A366581B7AFB010049EFBE /* sample-data.csv in Resources */,
 				33CC9D2D17B02F320083C59F /* Images.xcassets in Resources */,
 				33CC9D1917B02F320083C59F /* InfoPlist.strings in Resources */,
 				33CC9D2217B02F320083C59F /* Main.storyboard in Resources */,

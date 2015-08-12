@@ -10,8 +10,7 @@
 
 @class PRPasser;
 
-@interface PRGameListController : UIViewController
-    <UITableViewDelegate, UITableViewDataSource>
+@interface PRGameListController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) id <NSObject> detailItem;
 

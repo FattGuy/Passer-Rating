@@ -8,11 +8,39 @@
 
 #import "SimpleCSVFile.h"
 
-NSString * const	WT9TErrorDomain = @"com.wt9t.error";
+#define NAIVE_LINE_BREAKS   1
 
-NSString * const	kCSVErrorLineKey = @"kCSVErrorLineKey";
-NSString * const	kCSVExpectedFieldsKey = @"kCSVExpectedFieldsKey";
-NSString * const	kCSVActualFieldsKey = @"kCSVActualFieldsKey";
+NSString * const		WT9TErrorDomain = @"com.wt9t.error";
+
+#if ! NAIVE_LINE_BREAKS
+@interface NSString (LineBreakingExtensions)
+- (NSArray *) componentsBrokenByLines;
+@end
+
+@implementation NSString (LineBreakingExtensions)
+
+- (NSArray *) componentsBrokenByLines
+{
+    NSScanner *         scanner = [NSScanner scannerWithString: self];
+    NSCharacterSet *    lineEnders = [NSCharacterSet newlineCharacterSet];
+    NSMutableArray *    retval = [NSMutableArray array];
+    
+    [scanner setCharactersToBeSkipped: nil];
+    while (! [scanner isAtEnd]) {
+        NSString *      token;
+        [scanner scanCharactersFromSet: lineEnders intoString: NULL];
+        if ([scanner scanUpToCharactersFromSet: lineEnders intoString: &token])
+            [retval addObject: token];
+    }
+    return retval;
+}
+@end
+
+#endif  //  NAIVE_LINE_BREAKS
+
+NSString * const		kCSVErrorLineKey = @"kCSVErrorLineKey";
+NSString * const		kCSVExpectedFieldsKey = @"kCSVExpectedFieldsKey";
+NSString * const		kCSVActualFieldsKey = @"kCSVActualFieldsKey";
 
 @interface SimpleCSVFile () {
     NSArray *       _headers;
@@ -32,22 +60,22 @@ NSString * const	kCSVActualFieldsKey = @"kCSVActualFieldsKey";
 
 - (NSError *) badLineFormatError: (NSUInteger) fieldCount
 {
-    NSString *		localizedDescription =
-    [NSString stringWithFormat:
-         @"%@:%lu: Expected %lu fields, got %lu.",
-         self.path, (unsigned long)self.lineCount, (unsigned long)self.headers.count, (unsigned long)fieldCount];
+    NSString *		localizedDescription = 
+            [NSString stringWithFormat:
+             @"%@:%lu: Expected %lu fields, got %lu.",
+             self.path, (unsigned long)self.lineCount, (unsigned long)self.headers.count, (unsigned long)fieldCount];
     
     NSDictionary *	userInfo = @{
-         kCSVErrorLineKey          : @(self.lineCount),
-         kCSVExpectedFieldsKey     : @(self.headers.count),
-         kCSVActualFieldsKey       : @(fieldCount),
-         NSFilePathErrorKey        : self.path,
-         NSLocalizedDescriptionKey : localizedDescription
-         };
+      kCSVErrorLineKey          : @(self.lineCount),
+      kCSVExpectedFieldsKey     : @(self.headers.count),
+      kCSVActualFieldsKey       : @(fieldCount),
+      NSFilePathErrorKey        : self.path,
+      NSLocalizedDescriptionKey : localizedDescription
+      };
     
     return [NSError errorWithDomain: WT9TErrorDomain
-                               code: errCSVBadFormatLine
-                           userInfo: userInfo];
+                                 code: errCSVBadFormatLine
+                             userInfo: userInfo];
 }
 
 - (NSError *) emptyFileError
@@ -96,9 +124,13 @@ NSString * const	kCSVActualFieldsKey = @"kCSVActualFieldsKey";
         if (error) *error = [self emptyFileError];
 		return NO;
     }
-
+	
+#if NAIVE_LINE_BREAKS
     NSArray *	lines = [contents componentsSeparatedByCharactersInSet:
 						 [NSCharacterSet newlineCharacterSet]];
+#else
+    NSArray *   lines = [contents componentsBrokenByLines];
+#endif
     
 	self.lineCount = 0;
 	

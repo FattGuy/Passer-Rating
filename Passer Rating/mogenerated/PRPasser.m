@@ -31,60 +31,60 @@ static NSMutableDictionary *   sAllPassers;
 #if FETCH_METHOD == VANILLA_CORE_DATA
 
 + (NSArray *) existingPassersWithLastName: (NSString *) last
-                                firstName: (NSString *) first
-                                inContext: (NSManagedObjectContext *) moc
+								firstName: (NSString *) first
+								inContext: (NSManagedObjectContext *) moc
 {
-    NSParameterAssert(last && last.length > 0);
-    NSParameterAssert(first && first.length > 0);
+	NSParameterAssert(last && last.length > 0);
+	NSParameterAssert(first && first.length > 0);
     
     NSFetchRequest *	req = [NSFetchRequest
                                fetchRequestWithEntityName: @"Passer"];
     NSPredicate *       byName;
-    byName = [NSPredicate predicateWithFormat:
+	byName = [NSPredicate predicateWithFormat:
               @"firstName = %@ AND lastName = %@",
               first, last];
-    req.predicate = byName;
-    
-    NSArray *			result = [moc executeFetchRequest: req
+	req.predicate = byName;
+	
+	NSArray *			result = [moc executeFetchRequest: req
                                             error: NULL];
     //  FIXME: No error handling
-    return result;
+	return result;
 }
 
 #elif FETCH_METHOD == TWO_LEVEL_FETCH
 
 + (NSArray *) existingPassersWithLastName: (NSString *) last
-                                firstName: (NSString *) first
-                                inContext: (NSManagedObjectContext *) moc
+								firstName: (NSString *) first
+								inContext: (NSManagedObjectContext *) moc
 {
-    NSParameterAssert(last && last.length > 0);
-    NSParameterAssert(first && first.length > 0);
+	NSParameterAssert(last && last.length > 0);
+	NSParameterAssert(first && first.length > 0);
     
     //  Ask Core Data for a first-name match ONLY:
     NSFetchRequest *	req = [NSFetchRequest fetchRequestWithEntityName: @"Passer"];
     
     NSPredicate *       byName;
     byName = [NSPredicate predicateWithFormat: @"firstName = %@", first];
-    req.predicate = byName;
-    
-    NSArray *			result = [moc executeFetchRequest: req
+	req.predicate = byName;
+	
+	NSArray *			result = [moc executeFetchRequest: req
                                             error: NULL];
     //  FIXME: No error handling
     
     //  Once you have the first names, filter by last name:
     result = [result filteredArrayUsingPredicate:
               [NSPredicate predicateWithFormat: @"lastName = %@", last]];
-    return result;
+	return result;
 }
 
 #elif FETCH_METHOD == ALL_IN_MEMORY
 
 + (NSArray *) existingPassersWithLastName: (NSString *) last
-                                firstName: (NSString *) first
-                                inContext: (NSManagedObjectContext *) moc
+								firstName: (NSString *) first
+								inContext: (NSManagedObjectContext *) moc
 {
-    NSParameterAssert(last && last.length > 0);
-    NSParameterAssert(first && first.length > 0);
+	NSParameterAssert(last && last.length > 0);
+	NSParameterAssert(first && first.length > 0);
     
     //  FIXME: Retrieve from a static dictionary on a last|first key
     NSString *      key = [NSString stringWithFormat: @"%@|%@", last, first];
@@ -96,7 +96,7 @@ static NSMutableDictionary *   sAllPassers;
         result = [NSArray arrayWithObject: passer];
     else
         result = [NSArray array];
-    return result;
+	return result;
 }
 
 #else
@@ -111,8 +111,8 @@ static NSMutableDictionary *   sAllPassers;
                          inContext: (NSManagedObjectContext *) moc
 {
     NSArray *	result = [self existingPassersWithLastName: lastName
-                                               firstName: firstName
-                                               inContext: moc];
+                                                 firstName: firstName
+                                                 inContext: moc];
     if (result.count > 0)
         return result.lastObject;
     else {
@@ -134,18 +134,18 @@ static NSMutableDictionary *   sAllPassers;
 - (double) passerRating
 {
     double rating = passer_rating(self.completions,
-                                  self.attempts,
-                                  self.yards,
-                                  self.touchdowns,
-                                  self.interceptions);
+								  self.attempts,
+								  self.yards,
+								  self.touchdowns,
+								  self.interceptions);
     return rating;
 }
 
 - (int) sumOfGameAttribute: (NSString *) attribute
 {
-    NSString *		keyPath = [NSString stringWithFormat:
-                               @"@sum.%@", attribute];
-    return [[self.games valueForKeyPath: keyPath] intValue];
+	NSString *		keyPath = [NSString stringWithFormat:
+							   @"@sum.%@", attribute];
+	return [[self.games valueForKeyPath: keyPath] intValue];
 }
 
 - (int) attempts
@@ -222,10 +222,10 @@ static NSMutableDictionary *   sAllPassers;
 
 - (void) setValuesFromDictionary: (NSDictionary *) aDict
 {
-    for (NSString * key in [PRPasser allAttributes]) {
-        [self setValue: [aDict valueForKey: key]
-                forKey: key];
-    }
+	for (NSString * key in [PRPasser allAttributes]) {
+		[self setValue: [aDict valueForKey: key]
+				forKey: key];
+	}
 }
 
 

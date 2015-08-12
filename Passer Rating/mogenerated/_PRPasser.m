@@ -3,15 +3,23 @@
 
 #import "_PRPasser.h"
 
+
 const struct PRPasserAttributes PRPasserAttributes = {
 	.currentTeam = @"currentTeam",
 	.firstName = @"firstName",
 	.lastName = @"lastName",
 };
 
+
+
 const struct PRPasserRelationships PRPasserRelationships = {
 	.games = @"games",
 };
+
+
+
+
+
 
 @implementation PRPasserID
 @end
@@ -38,26 +46,55 @@ const struct PRPasserRelationships PRPasserRelationships = {
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+	
 
 	return keyPaths;
 }
 
+
+
+
 @dynamic currentTeam;
+
+
+
+
+
 
 @dynamic firstName;
 
+
+
+
+
+
 @dynamic lastName;
+
+
+
+
+
 
 @dynamic games;
 
+	
 - (NSMutableSet*)gamesSet {
 	[self willAccessValueForKey:@"games"];
-
+  
 	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"games"];
-
+  
 	[self didAccessValueForKey:@"games"];
 	return result;
 }
+	
+
+
+
+
+
 
 @end
+
+
+
 
