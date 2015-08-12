@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F909E4A183ECED9002E72FB /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1F909E49183ECED9002E72FB /* sample-data.csv */; };
 		33964EFC17B81E73006BD77E /* _PRGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF417B81E73006BD77E /* _PRGame.m */; };
 		33964EFD17B81E73006BD77E /* _PRPasser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF617B81E73006BD77E /* _PRPasser.m */; };
 		33964EFE17B81E73006BD77E /* PRGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 33964EF817B81E73006BD77E /* PRGame.m */; };
@@ -33,6 +32,7 @@
 		33CC9D4C17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33CC9D4D17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */; };
+		B32F1A9B1B7AF0DE00FF3F47 /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F909E49183ECED9002E72FB /* sample-data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sample-data.csv"; sourceTree = "<group>"; };
 		33964EF317B81E73006BD77E /* _PRGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PRGame.h; sourceTree = "<group>"; };
 		33964EF417B81E73006BD77E /* _PRGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PRGame.m; sourceTree = "<group>"; };
 		33964EF517B81E73006BD77E /* _PRPasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PRPasser.h; sourceTree = "<group>"; };
@@ -56,7 +55,6 @@
 		33964EF917B81E73006BD77E /* PRPasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPasser.h; sourceTree = "<group>"; };
 		33964EFA17B81E73006BD77E /* PRPasser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPasser.m; sourceTree = "<group>"; };
 		33964EFB17B81E73006BD77E /* PRDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRDataModel.h; sourceTree = "<group>"; };
-		33964F4B17B834C3006BD77E /* generate-games.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "generate-games.rb"; sourceTree = "<group>"; };
 		33CC9D0917B02F320083C59F /* Passer Rating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passer Rating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33CC9D0C17B02F320083C59F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33CC9D0E17B02F320083C59F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +82,8 @@
 		33CC9D4B17B0502E0083C59F /* rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
 		33E9FEA217B99D590032B3AD /* SimpleCSVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCSVFile.h; sourceTree = "<group>"; };
 		33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCSVFile.m; sourceTree = "<group>"; };
+		B32C4A9E1B7A7D6D0046973F /* generate-games.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "generate-games.rb"; sourceTree = "<group>"; };
+		B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sample-data.csv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +130,8 @@
 		33CC9D0017B02F320083C59F = {
 			isa = PBXGroup;
 			children = (
+				B32F1A9A1B7AF0DE00FF3F47 /* sample-data.csv */,
+				B32C4A9E1B7A7D6D0046973F /* generate-games.rb */,
 				33CC9D1417B02F320083C59F /* Passer Rating */,
 				33CC9D3A17B02F330083C59F /* Passer RatingTests */,
 				33CC9D0B17B02F320083C59F /* Frameworks */,
@@ -184,8 +186,6 @@
 		33CC9D1517B02F320083C59F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F909E49183ECED9002E72FB /* sample-data.csv */,
-				33964F4B17B834C3006BD77E /* generate-games.rb */,
 				33CC9D1617B02F320083C59F /* Passer Rating-Info.plist */,
 				33CC9D1717B02F320083C59F /* InfoPlist.strings */,
 				33CC9D1A17B02F320083C59F /* main.m */,
@@ -221,7 +221,6 @@
 			buildPhases = (
 				33CC9D0517B02F320083C59F /* Sources */,
 				33CC9D0617B02F320083C59F /* Frameworks */,
-				334E4FA217B8367500518DFB /* Generate Test Data */,
 				33CC9D0717B02F320083C59F /* Resources */,
 				B32DF2331B7A732600A40598 /* ShellScript */,
 			);
@@ -294,9 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32F1A9B1B7AF0DE00FF3F47 /* sample-data.csv in Resources */,
 				33CC9D2D17B02F320083C59F /* Images.xcassets in Resources */,
 				33CC9D1917B02F320083C59F /* InfoPlist.strings in Resources */,
-				1F909E4A183ECED9002E72FB /* sample-data.csv in Resources */,
 				33CC9D2217B02F320083C59F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,36 +311,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		334E4FA217B8367500518DFB /* Generate Test Data */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Passer Rating/generate-games.rb",
-			);
-			name = "Generate Test Data";
-			outputPaths = (
-				"$(SRCROOT)/Passer Rating/sample-data.csv",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/bin/ruby \"${SRCROOT}/Passer Rating/generate-games.rb\" \"${SRCROOT}/Passer Rating/sample-data.csv\"";
-		};
 		B32DF2331B7A732600A40598 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Passer Rating/generate-games.rb",
+				"$(SRCROOT)/generate-games.rb",
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Passer Rating/sample-data.csv",
+				"$(DERIVED_FILE_DIR)/Passer\\ Rating/sample-data.csv",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Passer Rating/generate-games.rb\" > \"${SRCROOT}/Passer Rating/sample-data.csv\"\n\n";
+			shellScript = "\"${SRCROOT}/generate-games.rb\" > \"${SRCROOT}/sample-data.csv\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

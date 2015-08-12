@@ -1,4 +1,4 @@
-#! /usr/bin ruby
+#! /usr/bin/env ruby
 
 require 'date'
 require 'csv'
@@ -256,10 +256,7 @@ end
 
 season_opens = Date.strptime '2010-03-24'
 
-$outPath = File.expand_path ARGV[0]
-
-# output =
-CSV.generate($outPath) do | csv |
+output = CSV.generate do | csv |
 	csv << ["firstName", "lastName",
 			"attempts", "completions", "interceptions", "touchdowns", 
 			"yards", "whenPlayed", "ourTeam", "ourScore", 
@@ -283,4 +280,4 @@ CSV.generate($outPath) do | csv |
 	end
 end
 
-# puts output
+puts output
