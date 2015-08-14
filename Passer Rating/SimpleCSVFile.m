@@ -60,22 +60,22 @@ NSString * const		kCSVActualFieldsKey = @"kCSVActualFieldsKey";
 
 - (NSError *) badLineFormatError: (NSUInteger) fieldCount
 {
-    NSString *		localizedDescription = 
-            [NSString stringWithFormat:
-             @"%@:%lu: Expected %lu fields, got %lu.",
-             self.path, (unsigned long)self.lineCount, (unsigned long)self.headers.count, (unsigned long)fieldCount];
+    NSString *		localizedDescription =
+    [NSString stringWithFormat:
+     @"%@:%d: Expected %d fields, got %d.",
+     self.path, self.lineCount, self.headers.count, fieldCount];
     
     NSDictionary *	userInfo = @{
-      kCSVErrorLineKey          : @(self.lineCount),
-      kCSVExpectedFieldsKey     : @(self.headers.count),
-      kCSVActualFieldsKey       : @(fieldCount),
-      NSFilePathErrorKey        : self.path,
-      NSLocalizedDescriptionKey : localizedDescription
-      };
+                                 kCSVErrorLineKey          : @(self.lineCount),
+                                 kCSVExpectedFieldsKey     : @(self.headers.count),
+                                 kCSVActualFieldsKey       : @(fieldCount),
+                                 NSFilePathErrorKey        : self.path,
+                                 NSLocalizedDescriptionKey : localizedDescription
+                                 };
     
     return [NSError errorWithDomain: WT9TErrorDomain
-                                 code: errCSVBadFormatLine
-                             userInfo: userInfo];
+                               code: errCSVBadFormatLine
+                           userInfo: userInfo];
 }
 
 - (NSError *) emptyFileError

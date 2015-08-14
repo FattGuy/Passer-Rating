@@ -259,7 +259,7 @@ static NSNumberFormatter *		ratingFormatter;
                game.interceptions.intValue];
     currentLabel.text = content;
 #if CELL_TO_USE == GRAPHIC_CELL
-	//	Nope, that's the wrong format for the stats label.
+//	//	Nope, that's the wrong format for the stats label.
     content = [NSString stringWithFormat:
                @"%d/%d - %d yd\n%d TD - %d INT",
                game.completions.intValue, game.attempts.intValue,
