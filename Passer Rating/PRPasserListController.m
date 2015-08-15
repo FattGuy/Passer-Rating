@@ -9,12 +9,15 @@
 #import "PRPasserListController.h"
 #import "PRGameListController.h"
 #import "PRDataModel.h"
+#import "PRPasserEditController.h"
 
 @interface PRPasserListController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation PRPasserListController
+@implementation PRPasserListController {
+    __strong PRPasser *		_passerToEdit;
+}
 
 - (void)awakeFromNib
 {
@@ -24,11 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,24 +39,24 @@
 
 - (void)insertNewObject:(id)sender
 {
-	//  Leave this in. I'll explain why.
-//	NSEntityDescription *entity =
-//            [[self.fetchedResultsController fetchRequest] entity];
+    //  Leave this in. I'll explain why.
+    //	NSEntityDescription *entity =
+    //            [[self.fetchedResultsController fetchRequest] entity];
     
-	//  Initialize a new Passer.
-	PRPasser *        newPasser =
+    //  Initialize a new Passer.
+    PRPasser *        newPasser =
     [PRPasser passerWithFirstName: @"FirstName"
-                       lastName: @"LastName"
-                      inContext:  self.managedObjectContext];
-	newPasser.currentTeam = @"TeamName";
-	
-	// Save the context.
-	NSError *error;
-	if (![self.managedObjectContext save:&error]) {
-		//  ...
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
+                         lastName: @"LastName"
+                        inContext:  self.managedObjectContext];
+    newPasser.currentTeam = @"TeamName";
+    
+    // Save the context.
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        //  ...
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 #pragma mark - Table View
@@ -93,18 +93,26 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    }   
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // The table view should not be re-orderable.
     return NO;
+}
+
+- (void) tableView: (UITableView *) tableView
+accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
+{
+    _passerToEdit = [self.fetchedResultsController objectAtIndexPath: indexPath];
+    [self performSegueWithIdentifier: @"Edit passer"
+                              sender: _passerToEdit];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -114,6 +122,21 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem: (PRPasser *) object];
     }
+    else if ([segue.identifier isEqualToString: @"Edit passer"]) {
+        PRPasserEditController *	editor = segue.destinationViewController;
+        if (_passerToEdit) {
+            editor.editValues = [_passerToEdit dictionaryWithValuesForKeys:
+                                 @[@"firstName", @"lastName", @"currentTeam"]];
+            editor.representedObject = _passerToEdit;
+        }
+        else {
+            editor.editValues = @{@"firstName"		: @"",
+                                  @"lastName"		: @"",
+                                  @"currentTeam"    : @""};
+            editor.representedObject = nil;
+        }
+    }
+    _passerToEdit = nil;
 }
 
 #pragma mark - Fetched results controller
@@ -125,18 +148,18 @@
     }
     
     NSFetchRequest *fetchRequest =
-            [NSFetchRequest fetchRequestWithEntityName: @"Passer"];
+    [NSFetchRequest fetchRequestWithEntityName: @"Passer"];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
-    // Edit the sort key as appropriate.    
+    // Edit the sort key as appropriate.
     NSArray *       sortDescriptors;
     sortDescriptors = @[
-        [NSSortDescriptor sortDescriptorWithKey: @"lastName"
-                                      ascending: YES],
-        [NSSortDescriptor sortDescriptorWithKey: @"firstName"
-                                      ascending: YES]
+                        [NSSortDescriptor sortDescriptorWithKey: @"lastName"
+                                                      ascending: YES],
+                        [NSSortDescriptor sortDescriptorWithKey: @"firstName"
+                                                      ascending: YES]
                         ];
     fetchRequest.sortDescriptors = sortDescriptors;
     
@@ -146,16 +169,16 @@
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-	     // Replace this implementation with code to handle the error appropriately.
-	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
     return _fetchedResultsController;
-}    
+}
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -208,24 +231,59 @@
 }
 
 /*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
+ // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
  
  - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
+ {
+ // In the simplest, most efficient, case, reload the table view.
+ [self.tableView reloadData];
+ }
  */
 
 - (void)configureCell: (UITableViewCell *) cell
           atIndexPath: (NSIndexPath *) indexPath
 {
     PRPasser *    passer = (PRPasser *)
-            [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSString *  content = [NSString stringWithFormat: @"%@ %@ (%.1f)",
                            passer.firstName, passer.lastName,
                            passer.passerRating];
     cell.textLabel.text = content;
+}
+
+#pragma mark - Editor results
+
+- (IBAction) editorDidSave: (UIStoryboardSegue *) sender
+{
+    //	An unwind segue, presumably representing an exit
+    //	from an editor, accepting the contents, has arrived.
+    //	The segue provides the source controller, which is the editor.
+    PRPasserEditController *	editor = sender.sourceViewController;
+    
+    //	The editor gives back the pointer to the PRPasser (if any)
+    //	it was editing. It did _not_ change its values; the editor
+    //	was just holding the pointer so we could get it back.
+    PRPasser *					passer = editor.representedObject;
+    
+    if (! passer) {
+        //	It's a new passer. Create it.
+        passer = [PRPasser insertInManagedObjectContext: self.managedObjectContext];
+    }
+    
+    //	Set the new/changed passer's attributes direcly from
+    //	the editor's values.
+    [passer setValuesForKeysWithDictionary: editor.editValues];
+    
+    NSError *					error;
+    if (! [self.managedObjectContext save: &error]) {
+        NSLog(@"%s: Could not save edited passer %@ - %@",
+              __PRETTY_FUNCTION__, error, error.userInfo);
+    }
+}
+
+- (IBAction) editorDidCancel: (UIStoryboardSegue *) sender
+{
+    //	If the edit was canceled, there's nothing to do.
 }
 
 @end
