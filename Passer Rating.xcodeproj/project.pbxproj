@@ -32,6 +32,8 @@
 		33CC9D4C17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33CC9D4D17B0502E0083C59F /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = 33CC9D4A17B0502E0083C59F /* rating.c */; };
 		33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */; };
+		B381E83E1B7FBF36003B7AF0 /* PRPasserEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = B381E83B1B7FBF36003B7AF0 /* PRPasserEditController.m */; };
+		B381E83F1B7FBF36003B7AF0 /* PRPasserEditTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B381E83D1B7FBF36003B7AF0 /* PRPasserEditTableController.m */; };
 		B3A366581B7AFB010049EFBE /* sample-data.csv in Resources */ = {isa = PBXBuildFile; fileRef = B3A366571B7AFB010049EFBE /* sample-data.csv */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,10 @@
 		33E9FEA217B99D590032B3AD /* SimpleCSVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCSVFile.h; sourceTree = "<group>"; };
 		33E9FEA317B99D590032B3AD /* SimpleCSVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCSVFile.m; sourceTree = "<group>"; };
 		B32C4A9E1B7A7D6D0046973F /* generate-games.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "generate-games.rb"; sourceTree = "<group>"; };
+		B381E83A1B7FBF36003B7AF0 /* PRPasserEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPasserEditController.h; sourceTree = "<group>"; };
+		B381E83B1B7FBF36003B7AF0 /* PRPasserEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPasserEditController.m; sourceTree = "<group>"; };
+		B381E83C1B7FBF36003B7AF0 /* PRPasserEditTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPasserEditTableController.h; sourceTree = "<group>"; };
+		B381E83D1B7FBF36003B7AF0 /* PRPasserEditTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPasserEditTableController.m; sourceTree = "<group>"; };
 		B3A366571B7AFB010049EFBE /* sample-data.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = "sample-data.csv"; path = "Passer Rating/sample-data.csv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +172,10 @@
 				33CC9D1D17B02F320083C59F /* PRAppDelegate.h */,
 				33CC9D1E17B02F320083C59F /* PRAppDelegate.m */,
 				33CC9D2017B02F320083C59F /* Main.storyboard */,
+				B381E83A1B7FBF36003B7AF0 /* PRPasserEditController.h */,
+				B381E83B1B7FBF36003B7AF0 /* PRPasserEditController.m */,
+				B381E83C1B7FBF36003B7AF0 /* PRPasserEditTableController.h */,
+				B381E83D1B7FBF36003B7AF0 /* PRPasserEditTableController.m */,
 				33CC9D2617B02F320083C59F /* PRPasserListController.h */,
 				33CC9D2717B02F320083C59F /* PRPasserListController.m */,
 				33CC9D2917B02F320083C59F /* PRGameListController.h */,
@@ -334,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CC9D4C17B0502E0083C59F /* rating.c in Sources */,
+				B381E83E1B7FBF36003B7AF0 /* PRPasserEditController.m in Sources */,
 				33964EFF17B81E73006BD77E /* PRPasser.m in Sources */,
 				33CC9D2B17B02F320083C59F /* PRGameListController.m in Sources */,
 				33964EFC17B81E73006BD77E /* _PRGame.m in Sources */,
@@ -341,6 +352,7 @@
 				33CC9D2517B02F320083C59F /* Passer_Rating.xcdatamodeld in Sources */,
 				33964EFD17B81E73006BD77E /* _PRPasser.m in Sources */,
 				33CC9D1F17B02F320083C59F /* PRAppDelegate.m in Sources */,
+				B381E83F1B7FBF36003B7AF0 /* PRPasserEditTableController.m in Sources */,
 				33E9FEA417B99D590032B3AD /* SimpleCSVFile.m in Sources */,
 				33964EFE17B81E73006BD77E /* PRGame.m in Sources */,
 				33CC9D1B17B02F320083C59F /* main.m in Sources */,
